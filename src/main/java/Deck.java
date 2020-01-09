@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.Collections;
+import java.util.Random;
 
 import static java.util.Collections.*;
 
@@ -26,8 +28,17 @@ public class Deck {
         }
     }
     public void shuffleDeck(){
-      shuffdeck = new ArrayList<Card>(shuffle(deck));
-
-     this.deck = shuffle(deck);
+    shuffle(deck);
     }
-}
+
+    public Card get(int i) {
+        return this.deck.get(i);
+    }
+
+    public Card dealCard() {
+        int number = new Random().nextInt(53);
+        return this.deck.get(number);
+    }
+    }
+
+
